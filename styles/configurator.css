@@ -71,12 +71,14 @@
   position: relative;
 }
 
-/* .item:hover{
+ .item:hover{
   padding-left: 1rem;
-} */
+}
 
 .item_heading {
   color: #dd9933;
+  height: 50%;
+  margin: 0%;
 }
 
 .item_heading:after {
@@ -290,4 +292,9 @@
 #price{
   font-size: 16px;
   color: black;
+}
+.selected_item{
+  font-size: 0.6rem;
+    text-transform: uppercase;
+    opacity: 0.5;
 }

@@ -18,11 +18,15 @@ function init() {
     document.getElementById("title").innerHTML = data.title;
 
     var item = document.getElementsByClassName("item");
+    var header = document.getElementsByClassName("header");
     var itemHeader = document.getElementsByClassName("item_heading");
     var ulist = document.getElementsByClassName("item_content");
     var imgContent = document.getElementsByClassName(
       "product_container__image"
     );
+
+    const selectedItemLabel = document.createElement("label");
+    selectedItemLabel.setAttribute("class", "selected_item");
 
     for (i = 0; i < itemHeader.length; i++) {
       itemHeader[i].innerHTML = data.attributes[i].name;
@@ -112,15 +116,13 @@ function init() {
     }
 
     function toggleItem() {
-      console.log("aici")
-      var itemClass = this.parentNode.className;
-      console.log(itemClass);
+      var itemClass = this.parentNode.parentNode.className;
       for (i = 0; i < item.length; i++) {
         item[i].className = "item close";
         // item[i].setAttribute("disabled", "");
       }
       if (itemClass == "item close") {
-        this.parentNode.className = "Item open";
+        this.parentNode.parentNode.className = "Item open";
         // this.parentNode.setAttribute("enabled", "");
       }
     }
@@ -180,6 +182,12 @@ function init() {
               value: inputValue,
             });
 
+            selectedItemLabel.innerHTML = inputName;
+
+            e.target.parentNode.parentNode.parentNode.parentNode
+              .querySelector(".header")
+              .appendChild(selectedItemLabel);
+
             sum += Number(inputValue) * Number(qty.value);
             priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
             price.innerHTML =
@@ -189,11 +197,20 @@ function init() {
             if (e.target.parentNode.classList[0] === "visited") {
               e.target.parentNode.classList.remove("visited");
               e.target.parentNode.parentNode.classList.remove("active");
+              var inputName = e.target.id;
 
               optionsCheckBox.splice(
                 optionsCheckBox.findIndex((item) => item.key == inputName),
                 1
               );
+
+              console.log(optionsCheckBox);
+
+              selectedItemLabel.innerHTML = "";
+              optionsCheckBox.forEach((element) => {
+                selectedItemLabel.innerHTML += element.key + ", ";
+              });
+
               var inputValue = e.target.value;
               sum -= inputValue * Number(qty.value);
             } else {
@@ -204,9 +221,14 @@ function init() {
 
               optionsCheckBox.push({ key: inputName, value: inputValue });
 
-              // const selectedItemLabel = document.createElement("label");
-              // selectedItemLabel.innerHTML = inputName;
-              
+              selectedItemLabel.innerHTML = "";
+              optionsCheckBox.forEach((element) => {
+                selectedItemLabel.innerHTML += element.key + ", ";
+              });
+
+              e.target.parentNode.parentNode.parentNode.parentNode
+                .querySelector(".header")
+                .appendChild(selectedItemLabel);
 
               sum += Number(inputValue) * Number(qty.value);
               priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
