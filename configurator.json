@@ -1,0 +1,669 @@
+{
+  "id": "1",
+  "title": "QWERTYKEY 1800 CUSTOM KEYBOARD",
+  "price": 296,
+  "attributes": [
+    {
+      "id": "1",
+      "name": "Case",
+      "type": "radio_button",
+      "icon": "icon_snow.png",
+      "variants": [
+        {
+          "id_attribute": "1",
+          "id": "1",
+          "name": "SNOW",
+          "icon": "icon_snow.png",
+          "stock": "232",
+          "price": 0,
+          "picture": "snow_picture.png"
+        },
+        {
+          "id_attribute": "1",
+          "id": "2",
+          "name": "SKY",
+          "icon": "icon_sky.png",
+          "stock": "3232",
+          "price": 0,
+          "picture": "sky_picture.png"
+        },
+        {
+          "id_attribute": "1",
+          "id": "3",
+          "name": "RUBY",
+          "icon": "icon_ruby.png",
+          "stock": "0",
+          "price": 0,
+          "picture": "ruby_picture.png"
+        },
+        {
+          "id_attribute": "1",
+          "id": "4",
+          "name": "INK",
+          "icon": "icon_ink.png",
+          "stock": "4232",
+          "price": 0,
+          "picture": "ink_picture.png"
+        },
+        {
+          "id_attribute": "1",
+          "id": "5",
+          "name": "OBSIDIAN",
+          "icon":"icon_obsidian.png",
+          "stock": "23232",
+          "price": 0,
+          "picture": "obsidian_picture.png"
+        },
+        {
+          "id_attribute": "1",
+          "id": "6",
+          "name": "BLOSSOM",
+          "icon":"icon_blossom.png",
+          "stock": "300",
+          "price": 0,
+          "picture": "blossom_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Switches",
+      "type": "radio_button",
+      "icon": "icon_switch.png",
+      "variants": [
+        {
+          "id_attribute": "2",
+          "id": "1",
+          "name": "DIAMOND",
+          "icon": "diamond.png",
+          "stock": "4343",
+          "price": 270,
+          "picture": "diamond_picture.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "2",
+          "name": "ICE CANDY",
+          "icon": "ice.png",
+          "stock": "434",
+          "price": 270,
+          "picture": "ice_picture.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "3",
+          "name": "OREO",
+          "icon": "oreo.png",
+          "stock": "3434",
+          "price": 270,
+          "picture": "oreo_picture.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "4",
+          "name": "CJ POM",
+          "icon": "cj.png",
+          "stock": "232",
+          "price": 340,
+          "picture": "cj_picture.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "5",
+          "name": "SHRIMP",
+          "icon": "shrimp.png",
+          "stock": "323",
+          "price": 390,
+          "picture": "shrimp_picture.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "6",
+          "name": "DOLPHIN",
+          "icon": "dolphin.png",
+          "stock": "323",
+          "price": 390,
+          "picture": "dolphin_picture.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "7",
+          "name": "L3",
+          "icon": "icon_L3.png",
+          "stock": "323",
+          "price": 380,
+          "picture": "L3.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "8",
+          "name": "T1",
+          "icon": "icon_t1.png",
+          "stock": "323",
+          "price": 380,
+          "picture": "t1.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "9",
+          "name": "CAP Yellow V2 ",
+          "icon": "icon_cap_yellow.png",
+          "stock": "323",
+          "price": 380,
+          "picture": "cap_yellow.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "10",
+          "name": "ALPACA",
+          "icon": "icon_alpaca.png",
+          "stock": "0",
+          "price": 320,
+          "picture": "alpaca.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "11",
+          "name": "CREAM",
+          "icon": "icon_cream.png",
+          "stock": "323",
+          "price": 340,
+          "picture": "cream.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "12",
+          "name": "Ink Black V2 ",
+          "icon": "icon_ink_black.png",
+          "stock": "323",
+          "price": 390,
+          "picture": "ink_black.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "13",
+          "name": "Pink Ink",
+          "icon": "icon_ink_pink.png",
+          "stock": "323",
+          "price": 440,
+          "picture": "ink_pink.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "14",
+          "name": "Glazed Green",
+          "icon": "icon_glazed_green.png",
+          "stock": "323",
+          "price": 240,
+          "picture": "glazed_green.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "15",
+          "name": "Noble Yellow",
+          "icon": "icon_noble_yellow.png",
+          "stock": "323",
+          "price": 240,
+          "picture": "noble_yellow.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "16",
+          "name": "Box White",
+          "icon": "icon_box_white.png",
+          "stock": "323",
+          "price": 240,
+          "picture": "box_white.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "17",
+          "name": "RUBY",
+          "icon": "icon_ruby_cap.png",
+          "stock": "323",
+          "price": 290,
+          "picture": "icon_ruby_cap.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "18",
+          "name": "Sapphire ",
+          "icon": "icon_sapphire.png",
+          "stock": "323",
+          "price": 290,
+          "picture": "sapphire.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "19",
+          "name": "CARROT ",
+          "icon": "icon_carrot.png",
+          "stock": "323",
+          "price": 280,
+          "picture": "carrot.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "20",
+          "name": "Purple Pandas  ",
+          "icon": "icon_purple_pandas.png",
+          "stock": "0",
+          "price": 280,
+          "picture": "purple_pandas.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "21",
+          "name": "Milky Clear ",
+          "icon": "icon_milky.png",
+          "stock": "323",
+          "price": 140,
+          "picture": "milky.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "22",
+          "name": "Milky Yellow",
+          "icon": "icon_milky_yellow.png",
+          "stock": "0",
+          "price": 140,
+          "picture": "milky_yellow.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "23",
+          "name": "Outemu Brown ",
+          "icon": "icon_outemu_brown.png",
+          "stock": "323",
+          "price": 90,
+          "picture": "outemu_brown.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "24",
+          "name": "Outemu Black ",
+          "icon": "icon_outemu_black.png",
+          "stock": "323",
+          "price": 90,
+          "picture": "outemu_black.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "25",
+          "name": "Outemu Blue ",
+          "icon": "icon_outemu_blue.png",
+          "stock": "323",
+          "price": 90,
+          "picture": "outemu_blue.png"
+        },
+        {
+          "id_attribute": "2",
+          "id": "26",
+          "name": "Outemu Red ",
+          "icon": "icon_outemu_red.png",
+          "stock": "323",
+          "price": 90,
+          "picture": "outemu_red.png"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Keycaps",
+      "type": "radio_button",
+      "icon": "icon_keycap.png",
+      "variants": [
+        {
+          "id_attribute": "3",
+          "id": "1",
+          "name": "LIFTOFF",
+          "icon": "liftoff.png",
+          "stock": "2323",
+          "price": 199,
+          "picture": "liftoff_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "2",
+          "name": "KYOTO",
+          "icon": "kyoto.png",
+          "stock": "232",
+          "price": 189,
+          "picture": "kyoto_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "3",
+          "name": "OCTOPUS YELLOW",
+          "icon": "oct_yellow.png",
+          "stock": "323",
+          "price": 199,
+          "picture": "oct_yellow_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "4",
+          "name": "OCTOPUS WHITE",
+          "icon": "oct_white.png",
+          "stock": "232",
+          "price": 199,
+          "picture": "oct_white_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "5",
+          "name": "GGAMBU",
+          "icon": "ggambu.png",
+          "stock": "233",
+          "price": 199,
+          "picture": "ggambu_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "6",
+          "name": "SUBMARINE",
+          "icon": "submarine.png",
+          "stock": "0",
+          "price": 199,
+          "picture": "submarine_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "7",
+          "name": "OLIVE",
+          "icon": "olive.png",
+          "stock": "100",
+          "price": 199,
+          "picture": "olive_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "8",
+          "name": "KOBE",
+          "icon": "kobe.png",
+          "stock": "100",
+          "price": 129,
+          "picture": "kobe_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "9",
+          "name": "JOKER",
+          "icon": "joker.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "joker_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "10",
+          "name": "LILIAC OCEAN",
+          "icon": "liliac_ocean.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "liliac_ocean_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "11",
+          "name": "Crimson",
+          "icon": "crimson.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "crimson_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "11",
+          "name": "BLACK RED DEVIL",
+          "icon": "black_red_devil.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "black_red_devil_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "12",
+          "name": "BLACK SEA",
+          "icon": "black_sea.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "black_sea_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "13",
+          "name": "LILIAC",
+          "icon": "liliac.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "liliac_picture.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "14",
+          "name": "LEMONADE",
+          "icon": "lemonade.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "lemonade.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "15",
+          "name": "ORANGE",
+          "icon": "orange.png",
+          "stock": "100",
+          "price": 99,
+          "picture": "orange.png"
+        },
+        {
+          "id_attribute": "3",
+          "id": "16",
+          "name": "RED DEVIL",
+          "icon": "red_devil.png",
+          "stock": "0",
+          "price": 99,
+          "picture": "red_devil_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Accesorii",
+      "type": "checkbox",
+      "icon": "null",
+      "variants": [
+        {
+          "id": "1",
+          "name": "Durock Plate Mount Negre",
+          "icon": "mount_negre.png",
+          "stock": "0",
+          "price": 49,
+          "picture": "mount_negre_picture.png"
+        },
+        {
+          "id": "2",
+          "name": "Durock Plate Mount Albe",
+          "icon": "mount_albe.png",
+          "stock": "233",
+          "price": 49,
+          "picture": "mount_albe_picture.png"
+        },
+        {
+          "id": "3",
+          "name": "KRYTOX 205",
+          "icon": "kry_205.png",
+          "stock": "3232",
+          "price": 79,
+          "picture": "kry_205_picture.png"
+        },
+        {
+          "id": "4",
+          "name": "KRYTOX 105",
+          "icon": "kry_105.png",
+          "stock": "434",
+          "price": 79,
+          "picture": "kry_105_picture.png"
+        },
+        {
+          "id": "5",
+          "name": "FILME",
+          "icon": "filme.png",
+          "stock": "1223",
+          "price": 39,
+          "picture": "filme_picture.png"
+        },
+        {
+          "id": "6",
+          "name": "Pensula QwertyKey",
+          "icon": "pensula.png",
+          "stock": "232",
+          "price": 19,
+          "picture": "pensula_picture.png"
+        },
+        {
+          "id": "7",
+          "name": "Switch Opener",
+          "icon": "opener.png",
+          "stock": "54",
+          "price": 19,
+          "picture": "opener_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Extra Servicii",
+      "type": "checkbox",
+      "icon": "null",
+      "variants": [
+        {
+          "id": "1",
+          "name": "Lubrifiere Switchuri",
+          "icon": "lub_switch.png",
+          "stock": "434",
+          "price": 269,
+          "picture": "lub_switch_picture.png"
+        },
+        {
+          "id": "2",
+          "name": "Lubrifiere Stabilizatoare",
+          "icon": "lub_stabil.png",
+          "stock": "543",
+          "price": 71,
+          "picture": "lub_stabil_picture.png"
+        },
+        {
+          "id": "3",
+          "name": "Adaugare filme",
+          "icon": "film.png",
+          "stock": "323",
+          "price": 71,
+          "picture": "film_picture.png"
+        },
+        {
+          "id": "4",
+          "name": "Asamblare Componente",
+          "icon": "asam_componente.png",
+          "stock": "54",
+          "price": 89,
+          "picture": "asam_componente_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Inclus in Kit",
+      "type": "checkbox",
+      "icon": "null",
+      "variants": [
+        {
+          "id": "1",
+          "name": "Cablu USB",
+          "icon": "usb.png",
+          "stock": "566",
+          "price": 0,
+          "picture": "usb_picture.png"
+        },
+        {
+          "id": "2",
+          "name": "Keycap Puller",
+          "icon": "keycap.png",
+          "stock": "2323",
+          "price": 0,
+          "picture": "keycap_picture.png"
+        },
+        {
+          "id": "3",
+          "name": "Switch Puller",
+          "icon": "switch.png",
+          "stock": "323",
+          "price": 0,
+          "picture": "switch_picture.png"
+        },
+        {
+          "id": "4",
+          "name": "Set Stabilizatoare",
+          "icon": "set_stabil.png",
+          "stock": "34",
+          "price": 0,
+          "picture": "set_stabil_picture.png"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Cablu Aviator (Optional)",
+      "type": "radio_button",
+      "icon": "icon_cablu.png",
+      "variants": [
+        {
+          "id_attribute": "7",
+          "id": "1",
+          "name": "NEGRU",
+          "icon": "negru.png",
+          "stock": "0",
+          "price": 149,
+          "picture": "negru_picture.png"
+        },
+        {
+          "id_attribute": "7",
+          "id": "2",
+          "name": "ALB",
+          "icon": "alb.png",
+          "stock": "97",
+          "price": 149,
+          "picture": "alb_picture.png"
+        },
+        {
+          "id_attribute": "7",
+          "id": "3",
+          "name": "ROSU",
+          "icon": "rosu.png",
+          "stock": "534",
+          "price": 149,
+          "picture": "rosu_picture.png"
+        },
+        {
+          "id_attribute": "7",
+          "id": "4",
+          "name": "VIOLET",
+          "icon": "violet.png",
+          "stock": "234",
+          "price": 149,
+          "picture": "violet_picture.png"
+        },
+        {
+          "id_attribute": "7",
+          "id": "5",
+          "name": "ALBASTRU",
+          "icon": "albastru.png",
+          "stock": "230",
+          "price": 149,
+          "picture": "albastru_picture.png"
+        }
+      ]
+    }
+  ]
+}
