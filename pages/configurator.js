@@ -37,10 +37,12 @@ function init() {
         itemIcon.setAttribute("alt", "picture");
         itemIcon.setAttribute("width", "40");
         itemIcon.setAttribute("height", "40");
-        item[i].prepend(itemIcon);
+        itemIcon.style.paddingRight = "0.5rem";
+        header[i].prepend(itemIcon);
       } else {
         var space = document.createElement("span");
-        item[i].prepend(space);
+        space.style.paddingRight = "3rem";
+        header[i].prepend(space);
       }
     }
 
@@ -59,29 +61,45 @@ function init() {
 
         li.setAttribute("class", "input_content");
 
+
+
         const img = document.createElement("img");
         img.setAttribute("src", "./../images/" + element.picture);
         img.setAttribute("alt", "picture");
         img.setAttribute("width", "528");
         img.setAttribute("height", "528");
 
+        
+        if (element.id_attribute == 1) {
+          if (element.id != 1) {
+            img.style.display = "none";
+          }
+
+          imgContent.item(i).appendChild(img);
+        }
+
+
+
+
         if (data.attributes[i].type == "radio_button") {
           input.setAttribute("type", "radio");
           input.setAttribute("id", element.name);
           input.setAttribute("name", element.id_attribute);
           input.setAttribute("value", element.price);
+          input.setAttribute("idv", element.id);
           input.style.backgroundImage = `url(${"./../images/" + element.icon})`;
 
           labelName.setAttribute("for", element.name);
           labelName.setAttribute("class", "radio_button__message");
+
+          
         } else {
           input.setAttribute("type", "checkbox");
           input.setAttribute("id", element.name);
           input.setAttribute("value", element.price);
           labelName.setAttribute("class", "radio_button__message");
+          input.setAttribute("idv", element.id);
         }
-
-        //imgContent[0].appendChild(img);
 
         if (element.price !== 0) {
           labelPrice.setAttribute("for", element.name);
@@ -103,6 +121,7 @@ function init() {
         labelName.innerHTML = element.name;
 
         input.innerHTML = element.name;
+
         li.append(a);
         a.appendChild(input);
         a.appendChild(labelSpan);
@@ -143,6 +162,7 @@ function init() {
             var inputValue = e.target.value;
             var inputName = e.target.id;
             var id_attribute = e.target.name;
+            var idv = e.target.getAttribute("idv");
 
             sectionsA.forEach((element) => {
               element.classList.remove("visited");
@@ -193,6 +213,25 @@ function init() {
             price.innerHTML =
               "+" + Number(inputValue) * Number(qty.value) + ".00 lei";
             console.log(optionsRadio);
+
+            e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+              .querySelector(".product_container__image")
+              .querySelectorAll("img")
+              .forEach((element) => {
+                element.style.display = "none";
+              });
+
+            e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+              .querySelector(".product_container__image")
+              .querySelectorAll("img")
+              .item(idv-1).style.display = "block";
+
+            console.log(
+              e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+                .querySelector(".product_container__image")
+                .querySelectorAll("img")
+                .item(idv-1)
+            );
           } else if (e.target.type === "checkbox") {
             if (e.target.parentNode.classList[0] === "visited") {
               e.target.parentNode.classList.remove("visited");
@@ -252,6 +291,7 @@ function init() {
           if (qty.value > 1) {
             sum = sum / Number(qty.value);
             qty.value--;
+            sum = sum * Number(qty.value);
           }
         } else if (e.target.matches(".woopq-quantity-input-plus")) {
           qty.value++;
