@@ -61,44 +61,45 @@ function init() {
 
         li.setAttribute("class", "input_content");
 
+        if (element.picture != "null") {
+          const img = document.createElement("img");
+          img.setAttribute("src", "./../images/" + element.picture);
+          img.setAttribute("alt", "picture");
+          img.setAttribute("width", "528");
+          img.setAttribute("height", "528");
+          img.setAttribute("name", element.id_attribute);
+          img.setAttribute("id_input", element.id);
+          img.style.position = "absolute";
 
+          //tentativa
 
-        const img = document.createElement("img");
-        img.setAttribute("src", "./../images/" + element.picture);
-        img.setAttribute("alt", "picture");
-        img.setAttribute("width", "528");
-        img.setAttribute("height", "528");
-
-        
-        if (element.id_attribute == 1) {
-          if (element.id != 1) {
+          if (element.id == 1 && element.id_attribute == 1) {
+            img.style.display = "block";
+          } else {
             img.style.display = "none";
           }
 
-          imgContent.item(i).appendChild(img);
+          imgContent.item(0).appendChild(img);
         }
-
-
-
 
         if (data.attributes[i].type == "radio_button") {
           input.setAttribute("type", "radio");
           input.setAttribute("id", element.name);
           input.setAttribute("name", element.id_attribute);
           input.setAttribute("value", element.price);
-          input.setAttribute("idv", element.id);
+          input.setAttribute("picture", element.picture);
+          input.setAttribute("id_input", element.id);
           input.style.backgroundImage = `url(${"./../images/" + element.icon})`;
 
           labelName.setAttribute("for", element.name);
           labelName.setAttribute("class", "radio_button__message");
-
-          
         } else {
           input.setAttribute("type", "checkbox");
           input.setAttribute("id", element.name);
           input.setAttribute("value", element.price);
           labelName.setAttribute("class", "radio_button__message");
-          input.setAttribute("idv", element.id);
+          input.setAttribute("picture", element.picture);
+          input.setAttribute("name", element.id_attribute);
         }
 
         if (element.price !== 0) {
@@ -122,9 +123,18 @@ function init() {
 
         input.innerHTML = element.name;
 
-        li.append(a);
-        a.appendChild(input);
-        a.appendChild(labelSpan);
+        //in work
+        if (element.id == 1 && element.id_attribute == 1) {
+          a.setAttribute("class", "visited");
+          li.setAttribute("class", "input_content active");
+          li.append(a);
+          a.appendChild(input);
+          a.appendChild(labelSpan);
+        } else {
+          li.append(a);
+          a.appendChild(input);
+          a.appendChild(labelSpan);
+        }
 
         ulist[i].appendChild(li);
       });
@@ -149,6 +159,7 @@ function init() {
     let sum = 0;
     const optionsCheckBox = [];
     const optionsRadio = [];
+    var saved_input = 0;
 
     document
       .querySelector(".product_container__options")
@@ -156,87 +167,141 @@ function init() {
         const qty = document.getElementById("quantity_6322c048d0003");
         const priceLabel = document.getElementById("price_label");
         const price = document.getElementById("price");
+
         if (e.target.matches("input")) {
           if (e.target.type == "radio") {
             var sectionsA = document.querySelectorAll("a");
             var inputValue = e.target.value;
             var inputName = e.target.id;
             var id_attribute = e.target.name;
-            var idv = e.target.getAttribute("idv");
+            var pic = e.target.getAttribute("picture");
 
             sectionsA.forEach((element) => {
               element.classList.remove("visited");
+              element.parentNode.classList.remove("active");
+              // optionsRadio.splice(
+              //   optionsRadio.findIndex((item) => item.key == inputName),
+              //   1
+              // );
 
-              optionsCheckBox.splice(
-                optionsRadio.findIndex((item) => item.key == inputName),
-                1
-              );
+              //verificam daca nu avem deja selectat un atribut la fel
+              if (optionsRadio.some((item) => item.key == id_attribute)) {
+                //cautam valoarea atributului vechi pt a o scoate din suma totala
+
+                optionsRadio.map((item) => {
+                  if (item.key == id_attribute) {
+                    sum -= Number(item.value) * Number(qty.value);
+
+                    priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
+                    price.innerHTML = "+" + "0.00 lei";
+                  }
+                });
+
+                //scoatem atributul din array
+                optionsRadio.splice(
+                  optionsRadio.findIndex((item) => item.key == id_attribute),
+                  1
+                );
+              }
             });
 
             var sectionsLi = document.querySelectorAll("li");
+
             sectionsLi.forEach((element) => {
-              element.classList.remove("active");
+              if (
+                element
+                  .querySelector("a")
+                  .querySelector("input")
+                  .getAttribute("id_input") == saved_input
+              ) {
+                element.classList.remove("active");
+              }
             });
 
-            e.target.parentNode.classList.add("visited");
-            e.target.parentNode.parentNode.classList.add("active");
+            var sect = e.target.parentNode.parentNode.querySelector("input");
 
-            //verificam daca nu avem deja selectat un atribut la fel
-            if (optionsRadio.some((item) => item.key == id_attribute)) {
-              //cautam valoarea atributului vechi pt a o scoate din suma totala
-              optionsRadio.map((item) => {
-                if (item.key == id_attribute) {
-                  sum -= Number(item.value) * Number(qty.value);
-                }
-              });
-              //scoatem atributul din array
-              optionsRadio.splice(
-                optionsRadio.findIndex((item) => item.key == id_attribute),
-                1
-              );
-            }
-
-            optionsRadio.push({
-              key: id_attribute,
-              name: inputName,
-              value: inputValue,
-            });
-
-            selectedItemLabel.innerHTML = inputName;
-
-            e.target.parentNode.parentNode.parentNode.parentNode
-              .querySelector(".header")
-              .appendChild(selectedItemLabel);
-
-            sum += Number(inputValue) * Number(qty.value);
-            priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
-            price.innerHTML =
-              "+" + Number(inputValue) * Number(qty.value) + ".00 lei";
-            console.log(optionsRadio);
-
-            e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
-              .querySelector(".product_container__image")
-              .querySelectorAll("img")
-              .forEach((element) => {
-                element.style.display = "none";
-              });
-
-            e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
-              .querySelector(".product_container__image")
-              .querySelectorAll("img")
-              .item(idv-1).style.display = "block";
-
-            console.log(
+            var images =
               e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
                 .querySelector(".product_container__image")
-                .querySelectorAll("img")
-                .item(idv-1)
-            );
+                .querySelectorAll("img");
+
+            var selected_img = "/images/" + pic;
+
+            if (sect.getAttribute("id_input") == saved_input) {
+              e.target.parentNode.classList.remove("visited");
+              e.target.parentNode.parentNode.classList.remove("active");
+              saved_input = 0;
+
+              //verificam daca nu avem deja selectat un atribut la fel
+              if (optionsRadio.some((item) => item.key == id_attribute)) {
+                //cautam valoarea atributului vechi pt a o scoate din suma totala
+
+                optionsRadio.map((item) => {
+                  if (item.key == id_attribute) {
+                    sum -= Number(item.value) * Number(qty.value);
+                  }
+                });
+
+                //scoatem atributul din array
+                optionsRadio.splice(
+                  optionsRadio.findIndex((item) => item.key == id_attribute),
+                  1
+                );
+
+                images.forEach((element) => {
+                  if (element.name == id_attribute) {
+                    if (element.src.includes(selected_img)) {
+                      element.style.display = "none";
+                    }
+                  }
+                });
+              }
+
+              console.log(optionsRadio);
+            } else {
+              e.target.parentNode.classList.add("visited");
+              e.target.parentNode.parentNode.classList.add("active");
+
+              saved_input = e.target.parentNode.parentNode
+                .querySelector("input")
+                .getAttribute("id_input");
+
+              optionsRadio.push({
+                key: id_attribute,
+                name: inputName,
+                value: inputValue,
+              });
+
+              selectedItemLabel.innerHTML = inputName;
+
+              e.target.parentNode.parentNode.parentNode.parentNode
+                .querySelector(".header")
+                .appendChild(selectedItemLabel);
+
+              sum += Number(inputValue) * Number(qty.value);
+              priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
+              price.innerHTML =
+                "+" + Number(inputValue) * Number(qty.value) + ".00 lei";
+              console.log(optionsRadio);
+
+              images.forEach((element) => {
+                if (element.name == id_attribute) {
+                  if (element.src.includes(selected_img)) {
+                    element.style.display = "block";
+                  } else {
+                    element.style.display = "none";
+                  }
+                }
+              });
+            }
           } else if (e.target.type === "checkbox") {
             if (e.target.parentNode.classList[0] === "visited") {
               e.target.parentNode.classList.remove("visited");
               e.target.parentNode.parentNode.classList.remove("active");
               var inputName = e.target.id;
+
+              var id_attribute = e.target.name;
+              var pic = e.target.getAttribute("picture");
 
               optionsCheckBox.splice(
                 optionsCheckBox.findIndex((item) => item.key == inputName),
@@ -252,11 +317,32 @@ function init() {
 
               var inputValue = e.target.value;
               sum -= inputValue * Number(qty.value);
+
+              priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
+              price.innerHTML = "+" + "0.00 lei";
+
+              var images =
+                e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+                  .querySelector(".product_container__image")
+                  .querySelectorAll("img");
+
+              var selected_img = "/images/" + pic;
+
+              images.forEach((element) => {
+                if (element.name == id_attribute) {
+                  if (element.src.includes(selected_img)) {
+                    element.style.display = "none";
+                  }
+                }
+              });
             } else {
               e.target.parentNode.classList.add("visited");
               e.target.parentNode.parentNode.classList.add("active");
               var inputValue = e.target.value;
               var inputName = e.target.id;
+
+              var id_attribute = e.target.name;
+              var pic = e.target.getAttribute("picture");
 
               optionsCheckBox.push({ key: inputName, value: inputValue });
 
@@ -273,6 +359,21 @@ function init() {
               priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
               price.innerHTML =
                 "+" + Number(inputValue) * Number(qty.value) + ".00 lei";
+
+              var images =
+                e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
+                  .querySelector(".product_container__image")
+                  .querySelectorAll("img");
+
+              var selected_img = "/images/" + pic;
+
+              images.forEach((element) => {
+                if (element.name == id_attribute) {
+                  if (element.src.includes(selected_img)) {
+                    element.style.display = "block";
+                  }
+                }
+              });
             }
 
             console.log(optionsCheckBox);
@@ -294,6 +395,7 @@ function init() {
             sum = sum * Number(qty.value);
           }
         } else if (e.target.matches(".woopq-quantity-input-plus")) {
+          sum = sum / Number(qty.value);
           qty.value++;
           sum = sum * Number(qty.value);
         }
