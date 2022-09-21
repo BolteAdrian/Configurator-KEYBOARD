@@ -58,7 +58,6 @@ function init() {
         const li = document.createElement("li");
         li.setAttribute("class", "input_content");
         const a = document.createElement("a");
-        //a.setAttribute("href", "#");
         const input = document.createElement("input");
         const labelName = document.createElement("label");
         const labelPrice = document.createElement("label");
@@ -305,7 +304,9 @@ function init() {
               //the deselected element will be removed from the label
               selectedItemLabel.innerHTML = "";
               optionsCheckBox.forEach((element) => {
+                if (element.key == id_attribute) {
                 selectedItemLabel.innerHTML += element.name + ", ";
+                }
               });
 
               var inputValue = e.target.value;
