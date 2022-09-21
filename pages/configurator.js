@@ -51,6 +51,11 @@ function init() {
       }
     }
 
+    let sum = 0; //variable for price
+    const optionsCheckBox = []; //array for checkbox items
+    const optionsRadio = []; //array for radio button items
+    var saved_input = 0; //last input clicked
+
     //create all the variants for attributes
     for (i = 0; i < itemHeader.length; i++) {
       data.attributes[i].variants.forEach((element) => {
@@ -135,6 +140,19 @@ function init() {
           li.append(a);
           a.appendChild(input);
           a.appendChild(labelSpan);
+        } else if (data.attributes[i].name=='Inclus in Kit') {
+          a.setAttribute("class", "visited");
+          li.setAttribute("class", "input_content active");
+          li.append(a);
+          a.appendChild(input);
+          a.appendChild(labelSpan);
+
+          //add the variant in array
+          optionsCheckBox.push({
+            key: element.id_attribute,
+            name: element.name,
+            value: element.price,
+          });
         } else {
           li.append(a);
           a.appendChild(input);
@@ -163,11 +181,6 @@ function init() {
         // this.parentNode.setAttribute("enabled", "");
       }
     }
-
-    let sum = 0; //variable for price
-    const optionsCheckBox = []; //array for checkbox items
-    const optionsRadio = []; //array for radio button items
-    var saved_input = 0; //last input clicked
 
     //when we click an input this functionm will be called
     document
@@ -224,7 +237,7 @@ function init() {
             if (sect.getAttribute("id_input") == saved_input) {
               e.target.parentNode.classList.remove("visited");
               e.target.parentNode.parentNode.classList.remove("active");
-              
+
               saved_input = 0; //id of the last selected input
 
               //same function to delete the element
@@ -402,9 +415,10 @@ function init() {
         }
       });
 
+      const qty = document.getElementById("quantity");//product quantity
+
     //this function is activated when we want to change the quantity
     document.querySelector(".quantity-input").addEventListener("click", (e) => {
-      const qty = document.getElementById("quantity");
       //lower qty
       if (e.target.matches(".quantity-input-minus")) {
         if (qty.value > 1) {
@@ -420,6 +434,25 @@ function init() {
       }
       // final price
       document.getElementById("final_price").innerHTML = sum + ".00 lei";
+    });
+
+    //this function is activated when we want to add to cart the product
+    document.querySelector(".add_to_cart").addEventListener("click", (e) => {
+      const product=[]
+      if (
+        typeof optionsCheckBox !== "undefined" &&
+        optionsCheckBox.length > 0
+      ) {
+        console.log("Produsul a fost salvat");
+        
+        product.push(optionsRadio);
+        product.push(optionsCheckBox);
+        product.push(qty.value);
+        
+        console.log(product);
+      } else {
+        console.log("ERROR: The product is not valid !");
+      }
     });
   });
 }

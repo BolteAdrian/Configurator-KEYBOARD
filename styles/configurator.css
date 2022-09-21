@@ -58,6 +58,7 @@
   display: grid;
   grid-template-columns: 0.1fr 0.8fr;
   color: #dd9933;
+  cursor: pointer;
 }
 
 .header:hover {
@@ -126,6 +127,7 @@
   text-decoration: none;
   color: #dd9933;
   display: block;
+  cursor: pointer;
 }
 
 .open .item_content input {
@@ -138,6 +140,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 30px 30px;
+  cursor: pointer;
 }
 
 .open .item_content .input_content {
@@ -275,6 +278,7 @@ input::-webkit-inner-spin-button {
   border-radius: 3px;
   transition: all 0.3s;
   margin-bottom: 5%;
+  cursor: pointer;
 }
 
 .qty .add_to_cart:hover {
