@@ -211,18 +211,22 @@ function init() {
 
             var sect = e.target.parentNode.parentNode.querySelector("input");
 
+            //Select all the pictures
             var images =
               e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
                 .querySelector(".product_container__image")
                 .querySelectorAll("img");
 
+            //select the picture of the current variant
             var selected_img = "/images/" + pic;
 
             //if we want to delete an variant that we selected alone
             if (sect.getAttribute("id_input") == saved_input) {
               e.target.parentNode.classList.remove("visited");
               e.target.parentNode.parentNode.classList.remove("active");
-              saved_input = 0;
+              
+              saved_input = 0; //id of the last selected input
+
               //same function to delete the element
               if (optionsRadio.some((item) => item.key == id_attribute)) {
                 optionsRadio.map((item) => {
@@ -256,6 +260,7 @@ function init() {
                 .querySelector("input")
                 .getAttribute("id_input");
 
+              //we add the variant in array
               optionsRadio.push({
                 key: id_attribute,
                 name: inputName,
@@ -273,6 +278,7 @@ function init() {
               added_cost.innerHTML =
                 "+" + Number(inputValue) * Number(qty.value) + ".00 lei";
               console.log(optionsRadio);
+
               //add a img for the selected variant
               images.forEach((element) => {
                 if (element.name == id_attribute) {
@@ -301,11 +307,14 @@ function init() {
               );
 
               console.log(optionsCheckBox);
+
               //the deselected element will be removed from the label
               selectedItemLabel.innerHTML = "";
+
+              //set the new label with current selected variants
               optionsCheckBox.forEach((element) => {
                 if (element.key == id_attribute) {
-                selectedItemLabel.innerHTML += element.name + ", ";
+                  selectedItemLabel.innerHTML += element.name + ", ";
                 }
               });
 
@@ -314,13 +323,14 @@ function init() {
 
               priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
               added_cost.innerHTML = "+" + "0.00 lei";
-
+              //select all the pictures
               var images =
                 e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
                   .querySelector(".product_container__image")
                   .querySelectorAll("img");
-
+              //select the picture of the current variant
               var selected_img = "/images/" + pic;
+
               //the picture for the deselected element will be removed
               images.forEach((element) => {
                 if (element.name == id_attribute) {
@@ -339,14 +349,17 @@ function init() {
               var id_attribute = e.target.name;
               var pic = e.target.getAttribute("picture");
 
-              //add the variant in the array
+              //add the variant in array
               optionsCheckBox.push({
                 key: id_attribute,
                 name: inputName,
                 value: inputValue,
               });
 
+              //the deselected element will be removed from the label
               selectedItemLabel.innerHTML = "";
+
+              //set the new label with current selected variants
               optionsCheckBox.forEach((element) => {
                 if (element.key == id_attribute) {
                   selectedItemLabel.innerHTML += element.name + ", ";
@@ -356,19 +369,23 @@ function init() {
               e.target.parentNode.parentNode.parentNode.parentNode
                 .querySelector(".header")
                 .appendChild(selectedItemLabel);
+
               //add the variant cost to the final sum
               sum += Number(inputValue) * Number(qty.value);
               priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
               added_cost.innerHTML =
                 "+" + Number(inputValue) * Number(qty.value) + ".00 lei";
-              //add variant image
+
+              //select all the pictures
               var images =
                 e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode
                   .querySelector(".product_container__image")
                   .querySelectorAll("img");
 
+              //select the picture of the current variant
               var selected_img = "/images/" + pic;
 
+              //we activate the image of the selected variant
               images.forEach((element) => {
                 if (element.name == id_attribute) {
                   if (element.src.includes(selected_img)) {
@@ -380,7 +397,7 @@ function init() {
 
             console.log(optionsCheckBox);
           }
-
+          //set final price
           document.getElementById("final_price").innerHTML = sum + ".00 lei";
         }
       });
