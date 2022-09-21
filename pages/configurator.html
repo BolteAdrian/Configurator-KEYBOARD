@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./../styles/configurator.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 
 <body>
@@ -56,25 +57,26 @@
         <ul class="item_content"></ul>
       </div>
     </div>
-    <div class="final_price">
+    <footer class="price_container">
       <label id="price_label"></label>
-      <span id="price"></span>
+      <span id="added_cost"></span>
       <h2 id="final_price">0.00 lei</h1>
         <div class="qty">
           <form>
-            <div class="woopq-quantity-input">
-              <div class="woopq-quantity-input-minus">-</div>
-              <input type="number" id="quantity_6322c048d0003" class="input-text qty text" step="1" min="1" max=""
-                name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="">
-              <div class="woopq-quantity-input-plus">+</div>
+            <div class="quantity-input">
+              <div class="quantity-input-minus">-</div>
+              <input type="number" id="quantity" class="input-text" step="1" min="1" max="" name="quantity"
+                value="1" title="Qty" size="4" placeholder="" inputmode="" >
+              <div class="quantity-input-plus">+</div>
             </div>
           </form>
           <button type="button" class="add_to_cart">
             Adaugă în coș
           </button>
         </div>
-    </div>
-    <script src="./configurator.js"></script>
+      </footer>
+  </div>
+  <script src="./configurator.js"></script>
 </body>
 
 </html>

@@ -49,7 +49,7 @@
           "id_attribute": "1",
           "id": "5",
           "name": "OBSIDIAN",
-          "icon":"icon_obsidian.png",
+          "icon": "icon_obsidian.png",
           "stock": "23232",
           "price": 0,
           "picture": "obsidian_picture.png"
@@ -58,7 +58,7 @@
           "id_attribute": "1",
           "id": "6",
           "name": "BLOSSOM",
-          "icon":"icon_blossom.png",
+          "icon": "icon_blossom.png",
           "stock": "300",
           "price": 0,
           "picture": "blossom_picture.png"
@@ -475,6 +475,7 @@
       "icon": "null",
       "variants": [
         {
+          "id_attribute": "4",
           "id": "1",
           "name": "Durock Plate Mount Negre",
           "icon": "mount_negre.png",
@@ -483,6 +484,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "4",
           "id": "2",
           "name": "Durock Plate Mount Albe",
           "icon": "mount_albe.png",
@@ -491,6 +493,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "4",
           "id": "3",
           "name": "KRYTOX 205",
           "icon": "kry_205.png",
@@ -499,6 +502,7 @@
           "picture": "kry_205_picture.png"
         },
         {
+          "id_attribute": "4",
           "id": "4",
           "name": "KRYTOX 105",
           "icon": "kry_105.png",
@@ -507,6 +511,7 @@
           "picture": "kry_105_picture.png"
         },
         {
+          "id_attribute": "4",
           "id": "5",
           "name": "FILME",
           "icon": "filme.png",
@@ -515,6 +520,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "4",
           "id": "6",
           "name": "Pensula QwertyKey",
           "icon": "pensula.png",
@@ -523,6 +529,7 @@
           "picture": "pensula_picture.png"
         },
         {
+          "id_attribute": "4",
           "id": "7",
           "name": "Switch Opener",
           "icon": "opener.png",
@@ -539,6 +546,7 @@
       "icon": "null",
       "variants": [
         {
+          "id_attribute": "5",
           "id": "1",
           "name": "Lubrifiere Switchuri",
           "icon": "lub_switch.png",
@@ -547,6 +555,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "5",
           "id": "2",
           "name": "Lubrifiere Stabilizatoare",
           "icon": "lub_stabil.png",
@@ -555,6 +564,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "5",
           "id": "3",
           "name": "Adaugare filme",
           "icon": "film.png",
@@ -563,6 +573,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "5",
           "id": "4",
           "name": "Asamblare Componente",
           "icon": "asam_componente.png",
@@ -579,6 +590,7 @@
       "icon": "null",
       "variants": [
         {
+          "id_attribute": "6",
           "id": "1",
           "name": "Cablu USB",
           "icon": "usb.png",
@@ -587,6 +599,7 @@
           "picture": "usb_picture.png"
         },
         {
+          "id_attribute": "6",
           "id": "2",
           "name": "Keycap Puller",
           "icon": "keycap.png",
@@ -595,6 +608,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "6",
           "id": "3",
           "name": "Switch Puller",
           "icon": "switch.png",
@@ -603,6 +617,7 @@
           "picture": "null"
         },
         {
+          "id_attribute": "6",
           "id": "4",
           "name": "Set Stabilizatoare",
           "icon": "set_stabil.png",
