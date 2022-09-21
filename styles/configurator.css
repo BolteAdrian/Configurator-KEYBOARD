@@ -179,14 +179,14 @@
 .input_content .out_of_stock {
   display: block;
   position: absolute;
-  margin-top: 0.3rem;
-  margin-right: 0.3rem;
   padding: 1em;
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
   font-size: 0.8em;
   text-transform: uppercase;
   line-height: 1;
+  width: 17%;
+  margin: 0;
 }
 
 .selected_item {
