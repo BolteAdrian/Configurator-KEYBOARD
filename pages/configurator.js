@@ -17,12 +17,11 @@ function init() {
   loadData(function (response) {
     // Parse JSON string into object
     const data = JSON.parse(response);
-    document.getElementById("title").innerHTML = data.title;
 
-    var item = document.getElementsByClassName("item");
-    var header = document.getElementsByClassName("header");
-    var itemHeader = document.getElementsByClassName("item_heading");
-    var ulist = document.getElementsByClassName("item_content");
+    document.getElementById("title").innerHTML = data.title;
+    var container_options = document.getElementsByClassName(
+      "product_container__options"
+    );
     var imgContent = document.getElementsByClassName(
       "product_container__image"
     );
@@ -31,9 +30,28 @@ function init() {
     const selectedItemLabel = document.createElement("label");
     selectedItemLabel.setAttribute("class", "selected_item");
 
+    let sum = 0; //variable for price
+    const optionsCheckBox = []; //array for checkbox items
+    const optionsRadio = []; //array for radio button items
+    let saved_input = 0; //last input clicked
+
     //create all the attributes
-    for (i = 0; i < itemHeader.length; i++) {
-      itemHeader[i].innerHTML = data.attributes[i].name;
+    for (i = 0; i < data.attributes.length; i++) {
+      var item = document.createElement("div");
+      item.setAttribute("class", "item close");
+      var header = document.createElement("span");
+      header.setAttribute("class", "header");
+      var itemHeader = document.createElement("h2");
+      itemHeader.setAttribute("class", "item_heading");
+      var ulist = document.createElement("ul");
+      ulist.setAttribute("class", "item_content");
+
+      container_options[0].appendChild(item);
+      item.appendChild(header);
+      item.appendChild(ulist);
+      header.appendChild(itemHeader);
+
+      itemHeader.innerHTML = data.attributes[i].name;
 
       // if the attribute has an icon we use it, if not then we let some space for design
       if (data.attributes[i].icon != "null") {
@@ -43,21 +61,14 @@ function init() {
         itemIcon.setAttribute("width", "40");
         itemIcon.setAttribute("height", "40");
         itemIcon.style.paddingRight = "0.5rem";
-        header[i].prepend(itemIcon);
+        header.prepend(itemIcon);
       } else {
         var space = document.createElement("span");
         space.style.paddingRight = "3rem";
-        header[i].prepend(space);
+        header.prepend(space);
       }
-    }
 
-    let sum = 0; //variable for price
-    const optionsCheckBox = []; //array for checkbox items
-    const optionsRadio = []; //array for radio button items
-    var saved_input = 0; //last input clicked
-
-    //create all the variants for attributes
-    for (i = 0; i < itemHeader.length; i++) {
+      //create all the variants for attributes
       data.attributes[i].variants.forEach((element) => {
         //Item elements
         const li = document.createElement("li");
@@ -82,10 +93,9 @@ function init() {
           //the first item will be selected when we open this page
           if (element.id == 1 && element.id_attribute == 1) {
             img.style.display = "block";
-          }else if(data.attributes[i].name=='Inclus in Kit'){
+          } else if (data.attributes[i].name == "Inclus in Kit") {
             img.style.display = "block";
-          }
-           else {
+          } else {
             img.style.display = "none";
           }
           imgContent.item(0).appendChild(img);
@@ -143,7 +153,14 @@ function init() {
           li.append(a);
           a.appendChild(input);
           a.appendChild(labelSpan);
-        } else if (data.attributes[i].name=='Inclus in Kit') {//this variants are included in kit and can t be deselected
+
+          optionsRadio.push({
+            key: element.id_attribute,
+            name: element.name,
+            value: element.price,
+          });
+        } else if (data.attributes[i].name == "Inclus in Kit") {
+          //this variants are included in kit and can t be deselected
           input.setAttribute("disabled", "");
           a.setAttribute("class", "visited");
           li.setAttribute("class", "input_content active");
@@ -164,25 +181,27 @@ function init() {
         }
 
         //add all the variants in the list (item)
-        ulist[i].appendChild(li);
+        ulist.appendChild(li);
       });
-    }
 
-    //if an item header is clicked then we activate toggleItem
-    for (i = 0; i < itemHeader.length; i++) {
-      itemHeader[i].addEventListener("click", toggleItem, false);
+      //if an item header is clicked then we activate toggleItem
+      itemHeader.addEventListener("click", toggleItem, false);
     }
 
     //set name to close or open
     function toggleItem() {
       var itemClass = this.parentNode.parentNode.className;
-      for (i = 0; i < item.length; i++) {
-        item[i].className = "item close";
-        // item[i].setAttribute("disabled", "");
+
+      var items = document
+        .querySelector(".product_container__options")
+        .querySelectorAll("div");
+
+      for (i = 0; i < items.length; i++) {
+        items[i].className = "item close";
       }
+
       if (itemClass == "item close") {
         this.parentNode.parentNode.className = "Item open";
-        // this.parentNode.setAttribute("enabled", "");
       }
     }
 
@@ -245,7 +264,10 @@ function init() {
               saved_input = 0; //id of the last selected input
 
               //same function to delete the element
-              if (optionsRadio.some((item) => item.key == id_attribute)) {
+              if (
+                optionsRadio.some((item) => item.key == id_attribute) &&
+                id_attribute != 1
+              ) {
                 optionsRadio.map((item) => {
                   if (item.key == id_attribute) {
                     sum -= Number(item.value) * Number(qty.value);
@@ -258,7 +280,7 @@ function init() {
               }
               //disable the img of the deleted variant
               images.forEach((element) => {
-                if (element.name == id_attribute) {
+                if (element.name == id_attribute && id_attribute != 1) {
                   if (element.src.includes(selected_img)) {
                     element.style.display = "none";
                   }
@@ -267,7 +289,6 @@ function init() {
 
               //selected label is null
               selectedItemLabel.innerHTML = "";
-              console.log(optionsRadio);
             } else {
               //select a new variant
               e.target.parentNode.classList.add("visited");
@@ -294,7 +315,6 @@ function init() {
               priceLabel.innerHTML = "COSTUL CONFIGURATIEI:";
               added_cost.innerHTML =
                 "+" + Number(inputValue) * Number(qty.value) + ".00 lei";
-              console.log(optionsRadio);
 
               //add a img for the selected variant
               images.forEach((element) => {
@@ -307,6 +327,7 @@ function init() {
                 }
               });
             }
+            console.log(optionsRadio);
           } else if (e.target.type === "checkbox") {
             //if the variant is an checkbox
             //if we click on an already selected element then we deselect that element
@@ -317,13 +338,14 @@ function init() {
 
               var id_attribute = e.target.name;
               var pic = e.target.getAttribute("picture");
-              //the deselected element will be take off from the array
-              optionsCheckBox.splice(
-                optionsCheckBox.findIndex((item) => item.key == inputName),
-                1
-              );
 
-              console.log(optionsCheckBox);
+              //the deselected element will be take off from the array
+              console.log(
+                optionsCheckBox.splice(
+                  optionsCheckBox.findIndex((item) => item.name == inputName),
+                  1
+                )
+              );
 
               //the deselected element will be removed from the label
               selectedItemLabel.innerHTML = "";
@@ -419,7 +441,7 @@ function init() {
         }
       });
 
-      const qty = document.getElementById("quantity");//product quantity
+    const qty = document.getElementById("quantity"); //product quantity
 
     //this function is activated when we want to change the quantity
     document.querySelector(".quantity-input").addEventListener("click", (e) => {
@@ -442,17 +464,17 @@ function init() {
 
     //this function is activated when we want to add to cart the product
     document.querySelector(".add_to_cart").addEventListener("click", (e) => {
-      const product=[]
+      const product = [];
       if (
         typeof optionsCheckBox !== "undefined" &&
         optionsCheckBox.length > 0
       ) {
         console.log("Produsul a fost salvat");
-        
+
         product.push(optionsRadio);
         product.push(optionsCheckBox);
         product.push(qty.value);
-        
+
         console.log(product);
       } else {
         console.log("ERROR: The product is not valid !");
