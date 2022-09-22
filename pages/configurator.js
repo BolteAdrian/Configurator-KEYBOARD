@@ -82,7 +82,10 @@ function init() {
           //the first item will be selected when we open this page
           if (element.id == 1 && element.id_attribute == 1) {
             img.style.display = "block";
-          } else {
+          }else if(data.attributes[i].name=='Inclus in Kit'){
+            img.style.display = "block";
+          }
+           else {
             img.style.display = "none";
           }
           imgContent.item(0).appendChild(img);
@@ -140,7 +143,8 @@ function init() {
           li.append(a);
           a.appendChild(input);
           a.appendChild(labelSpan);
-        } else if (data.attributes[i].name=='Inclus in Kit') {
+        } else if (data.attributes[i].name=='Inclus in Kit') {//this variants are included in kit and can t be deselected
+          input.setAttribute("disabled", "");
           a.setAttribute("class", "visited");
           li.setAttribute("class", "input_content active");
           li.append(a);
