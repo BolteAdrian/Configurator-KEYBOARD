@@ -303,6 +303,7 @@ input::-webkit-inner-spin-button {
 
   .header {
     grid-template-columns: 0.1fr 1fr;
+    padding: 5%;
   }
 
   .product_container .price_container {
@@ -337,11 +338,17 @@ input::-webkit-inner-spin-button {
   .qty {
     gap: 1%;
   }
+
+  .header {
+    grid-template-columns: 0.1fr 1fr;
+    padding: 4%;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   #title {
     width: 100%;
+    text-align: center;
   }
 
   .product_container {
@@ -359,11 +366,13 @@ input::-webkit-inner-spin-button {
     margin-left: 0%;
     padding-right: 75%;
     height: 30rem;
+    padding-bottom: 17%;
   }
 
   .product_container .product_container__options {
     grid-area: 2 / 1 / 3 / 2;
     padding-right: 20%;
+    padding-bottom: 50%;
   }
 
   .product_container .price_container {
