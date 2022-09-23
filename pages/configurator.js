@@ -109,7 +109,7 @@ function init() {
           input.setAttribute("value", element.price);
           input.setAttribute("picture", element.picture);
           input.setAttribute("id_input", element.id);
-
+console.log(element.id_attribute);
           if (element.icon != "null") {
             input.style.backgroundImage = `url(${
               "./../images/" + element.icon
@@ -127,7 +127,7 @@ function init() {
           input.setAttribute("picture", element.picture);
           labelName.setAttribute("class", "button_label");
         }
-
+      
         //if the variants doesnt have a price we will not show that part
         if (element.price !== 0) {
           labelPrice.setAttribute("for", element.name);
@@ -150,7 +150,7 @@ function init() {
         labelName.innerHTML = element.name;
 
         input.innerHTML = element.name;
-
+      
         //the first item will be selected when we open this page
         if (element.id == 1 && element.id_attribute == 1) {
           a.setAttribute("class", "visited");
@@ -184,7 +184,7 @@ function init() {
           a.appendChild(input);
           a.appendChild(labelSpan);
         }
-
+      
         //add all the variants in the list (item)
         ulist.appendChild(li);
       });
@@ -226,7 +226,7 @@ function init() {
             var inputName = e.target.id;
             var id_attribute = e.target.name;
             var pic = e.target.getAttribute("picture");
-
+     
             //if we click another options the last one will be deleted
             sectionsA.forEach((element) => {
               element.classList.remove("visited");
