@@ -2,7 +2,7 @@
 function loadData(callback) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
-  xobj.open("GET", "./../configurator.json", true);
+  xobj.open("GET", "./../switchx4.json", true);
   xobj.onreadystatechange = function () {
     if (xobj.readyState == 4 && xobj.status == "200") {
       // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -33,7 +33,8 @@ function init() {
     let sum = 0; //variable for price
     const optionsCheckBox = []; //array for checkbox items
     const optionsRadio = []; //array for radio button items
-    let saved_input = 0; //last input clicked
+    let saved_input = 0; //id of the input clicked
+    let saved_case = 0; // case of the last clicked input
 
     //create all the attributes
     for (i = 0; i < data.attributes.length; i++) {
@@ -104,12 +105,12 @@ function init() {
         //item with radio buttons
         if (data.attributes[i].type == "radio_button") {
           input.setAttribute("type", "radio");
-          input.setAttribute("id", element.name);
+          input.setAttribute("input_name", element.name);
           input.setAttribute("name", element.id_attribute);
           input.setAttribute("value", element.price);
           input.setAttribute("picture", element.picture);
           input.setAttribute("id_input", element.id);
-console.log(element.id_attribute);
+
           if (element.icon != "null") {
             input.style.backgroundImage = `url(${
               "./../images/" + element.icon
@@ -127,7 +128,7 @@ console.log(element.id_attribute);
           input.setAttribute("picture", element.picture);
           labelName.setAttribute("class", "button_label");
         }
-      
+
         //if the variants doesnt have a price we will not show that part
         if (element.price !== 0) {
           labelPrice.setAttribute("for", element.name);
@@ -150,7 +151,7 @@ console.log(element.id_attribute);
         labelName.innerHTML = element.name;
 
         input.innerHTML = element.name;
-      
+
         //the first item will be selected when we open this page
         if (element.id == 1 && element.id_attribute == 1) {
           a.setAttribute("class", "visited");
@@ -184,7 +185,7 @@ console.log(element.id_attribute);
           a.appendChild(input);
           a.appendChild(labelSpan);
         }
-      
+
         //add all the variants in the list (item)
         ulist.appendChild(li);
       });
@@ -219,14 +220,15 @@ console.log(element.id_attribute);
         const added_cost = document.getElementById("added_cost");
         added_cost.style.fontSize = "16px";
         //if the variant is an radio button
+
         if (e.target.matches("input")) {
           if (e.target.type == "radio") {
             var sectionsA = document.querySelectorAll("a");
             var inputValue = e.target.value;
-            var inputName = e.target.id;
+            var inputName = e.target.getAttribute("input_name");
             var id_attribute = e.target.name;
             var pic = e.target.getAttribute("picture");
-     
+
             //if we click another options the last one will be deleted
             sectionsA.forEach((element) => {
               element.classList.remove("visited");
@@ -262,11 +264,15 @@ console.log(element.id_attribute);
             var selected_img = "/images/" + pic;
 
             //if we want to delete an variant that we selected alone
-            if (sect.getAttribute("id_input") == saved_input) {
+            if (
+              sect.getAttribute("id_input") == saved_input &&
+              sect.getAttribute("name") == saved_case
+            ) {
               e.target.parentNode.classList.remove("visited");
               e.target.parentNode.parentNode.classList.remove("active");
 
               saved_input = 0; //id of the last selected input
+              saved_case = 0; //case of the last selected input
 
               //same function to delete the element
               if (
@@ -302,6 +308,10 @@ console.log(element.id_attribute);
               saved_input = e.target.parentNode.parentNode
                 .querySelector("input")
                 .getAttribute("id_input");
+
+              saved_case = e.target.parentNode.parentNode
+                .querySelector("input")
+                .getAttribute("name");
 
               //we add the variant in array
               optionsRadio.push({
@@ -339,7 +349,7 @@ console.log(element.id_attribute);
             if (e.target.parentNode.classList[0] === "visited") {
               e.target.parentNode.classList.remove("visited");
               e.target.parentNode.parentNode.classList.remove("active");
-              var inputName = e.target.id;
+              var inputName = e.target.getAttribute("input_name");
 
               var id_attribute = e.target.name;
               var pic = e.target.getAttribute("picture");
@@ -388,7 +398,7 @@ console.log(element.id_attribute);
               e.target.parentNode.classList.add("visited");
               e.target.parentNode.parentNode.classList.add("active");
               var inputValue = e.target.value;
-              var inputName = e.target.id;
+              var inputName = e.target.getAttribute("input_name");
 
               var id_attribute = e.target.name;
               var pic = e.target.getAttribute("picture");
