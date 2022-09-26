@@ -207,6 +207,7 @@
   padding-top: 1%;
   background-color: #fff;
   bottom: 0;
+  font-family: "Montserrat", Sans-serif;
 }
 
 #price_label {
@@ -279,10 +280,34 @@ input::-webkit-inner-spin-button {
   transition: all 0.3s;
   margin-bottom: 5%;
   cursor: pointer;
+  font-family: "Montserrat", Sans-serif;
 }
 
 .qty .add_to_cart:hover {
   background-color: #f9931d;
+}
+
+.favorite_container {
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  font-family: "Montserrat", Sans-serif;
+  padding-bottom: 2.5%;
+  padding-left: 5%;
+}
+
+.favorite_container a svg path {
+  fill: #f9931d;
+}
+
+.favorite_container a {
+  color: #c36;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  gap: 3%;
+  align-items: center;
 }
 
 @media screen and (min-width: 1024px) {
@@ -385,7 +410,7 @@ input::-webkit-inner-spin-button {
     padding-left: 0%;
   }
 
-  .product_container .product_container__image img{
+  .product_container .product_container__image img {
     width: 328px;
     height: 328px;
   }
@@ -398,14 +423,13 @@ input::-webkit-inner-spin-button {
     width: 63%;
   }
 
-.product_container .price_container {
+  .product_container .price_container {
     grid-area: 3 / 1 / 4 / 2;
     padding-left: 5rem;
-    padding-right: 10rem;
     bottom: 0;
-    padding-bottom: 2.5rem;
-    margin-left: 30%;
-    margin-top: 40.5rem;
+    padding-bottom: 1rem;
+    margin-left: 0;
+    right: 0;
   }
 
   .qty .add_to_cart {
@@ -418,17 +442,28 @@ input::-webkit-inner-spin-button {
     margin-right: 5px;
     color: #f9931d;
     border-radius: 8px;
-    padding-top: 3%;
+    padding-top: 5%;
     gap: 5%;
     padding-right: 4%;
-}
+  }
 
-.qty .add_to_cart:hover {
-  pointer-events: none;
-}
+  .qty .add_to_cart:hover {
+    background-color: transparent;
+  }
 
- #cart_icon{
+  #cart_icon {
     display: block !important;
+  }
+
+  .product_container .favorite_container #favorite__label{
+    display: none ;
+  }
+
+  .product_container .favorite_container {
+    background-color: transparent;
+    left:0;
+    padding-left: 1%;
+    margin-bottom: 7%;
   }
 
 }

@@ -2,7 +2,7 @@
 function loadData(callback) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
-  xobj.open("GET", "./../switchx4.json", true);
+  xobj.open("GET", "./../configurator.json", true);
   xobj.onreadystatechange = function () {
     if (xobj.readyState == 4 && xobj.status == "200") {
       // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -105,6 +105,7 @@ function init() {
         //item with radio buttons
         if (data.attributes[i].type == "radio_button") {
           input.setAttribute("type", "radio");
+          input.setAttribute("id", element.name);
           input.setAttribute("input_name", element.name);
           input.setAttribute("name", element.id_attribute);
           input.setAttribute("value", element.price);
@@ -221,7 +222,7 @@ function init() {
         added_cost.style.fontSize = "16px";
         //if the variant is an radio button
 
-        if (e.target.matches("input")) {
+        if (e.target.matches("input") || e.target.matches("label")) {
           if (e.target.type == "radio") {
             var sectionsA = document.querySelectorAll("a");
             var inputValue = e.target.value;
@@ -495,6 +496,27 @@ function init() {
         console.log("ERROR: The product is not valid !");
       }
     });
+
+    //this function is activated when we want to add to favorite the product
+    document
+      .querySelector(".favorite_container")
+      .addEventListener("click", (e) => {
+        const product = [];
+        if (
+          typeof optionsCheckBox !== "undefined" &&
+          optionsCheckBox.length > 0
+        ) {
+          console.log("Produsul a fost salvat");
+
+          product.push(optionsRadio);
+          product.push(optionsCheckBox);
+          product.push(qty.value);
+
+          console.log(product);
+        } else {
+          console.log("ERROR: The product is not valid !");
+        }
+      });
   });
 }
 
