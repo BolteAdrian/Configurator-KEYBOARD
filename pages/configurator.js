@@ -102,10 +102,12 @@ function init() {
           imgContent.item(0).appendChild(img);
         }
 
+        let id_label=element.name+ element.id_attribute //uniq = name+id_attribute
+
         //item with radio buttons
         if (data.attributes[i].type == "radio_button") {
           input.setAttribute("type", "radio");
-          input.setAttribute("id", element.name);
+          input.setAttribute("id", id_label);
           input.setAttribute("input_name", element.name);
           input.setAttribute("name", element.id_attribute);
           input.setAttribute("value", element.price);
@@ -118,21 +120,23 @@ function init() {
             })`;
           }
 
-          labelName.setAttribute("for", element.name);
+          labelName.setAttribute("for", (element.name+ element.attribute));
           labelName.setAttribute("class", "button_label");
         } else {
           //item with checkboxs
           input.setAttribute("type", "checkbox");
-          input.setAttribute("id", element.name);
+          input.setAttribute("id", id_label);
           input.setAttribute("name", element.id_attribute);
           input.setAttribute("value", element.price);
           input.setAttribute("picture", element.picture);
+          input.setAttribute("input_name", element.name);
+          input.setAttribute("id_input", element.id);
           labelName.setAttribute("class", "button_label");
         }
 
         //if the variants doesnt have a price we will not show that part
         if (element.price !== 0) {
-          labelPrice.setAttribute("for", element.name);
+          labelPrice.setAttribute("for", id_label);
           labelPrice.setAttribute("class", "button_label");
           labelPrice.style.color = "black";
           labelPrice.innerHTML = element.price + ".00 LEI";
@@ -222,7 +226,7 @@ function init() {
         added_cost.style.fontSize = "16px";
         //if the variant is an radio button
 
-        if (e.target.matches("input") || e.target.matches("label")) {
+        if (e.target.matches("input")) {
           if (e.target.type == "radio") {
             var sectionsA = document.querySelectorAll("a");
             var inputValue = e.target.value;
@@ -356,12 +360,10 @@ function init() {
               var pic = e.target.getAttribute("picture");
 
               //the deselected element will be take off from the array
-              console.log(
                 optionsCheckBox.splice(
                   optionsCheckBox.findIndex((item) => item.name == inputName),
                   1
-                )
-              );
+                );
 
               //the deselected element will be removed from the label
               selectedItemLabel.innerHTML = "";
@@ -398,6 +400,8 @@ function init() {
               //select the variant
               e.target.parentNode.classList.add("visited");
               e.target.parentNode.parentNode.classList.add("active");
+
+
               var inputValue = e.target.value;
               var inputName = e.target.getAttribute("input_name");
 
@@ -506,7 +510,7 @@ function init() {
           typeof optionsCheckBox !== "undefined" &&
           optionsCheckBox.length > 0
         ) {
-          console.log("Produsul a fost salvat");
+          console.log("Produsul a fost salvat in preferinte");
 
           product.push(optionsRadio);
           product.push(optionsCheckBox);
