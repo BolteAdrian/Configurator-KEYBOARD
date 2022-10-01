@@ -3,70 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <title>Configurator</title>
-  <link rel="stylesheet" href="./../styles/configurator.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 
 <body>
   <h1 id="title"></h1>
   <div class="product_container">
     <div class="product_container__image"></div>
-
-    <div class="product_container__options">
-      <div class="item close">
-        <h2 class="item_heading"></h2>
-        <ul class="item_content"></ul>
-      </div>
-      <div class="item close">
-        <h2 class="item_heading"></h2>
-        <ul class="item_content"></ul>
-      </div>
-      <div class="item close">
-        <h2 class="item_heading"></h2>
-        <ul class="item_content"></ul>
-      </div>
-      <div class="item close">
-        <h2 class="item_heading"></h2>
-        <ul class="item_content"></ul>
-      </div>
-      <div class="item close">
-        <h2 class="item_heading"></h2>
-        <ul class="item_content"></ul>
-      </div>
-      <div class="item close">
-        <h2 class="item_heading"></h2>
-        <ul class="item_content"></ul>
-      </div>
-      <div class="item close">
-        <h2 class="item_heading"></h2>
-        <ul class="item_content"></ul>
-      </div>
+    <div class="product_container__options"></div>
+    <div>
+      <footer align="right" class="price_container">
+        <label id="price_label"></label>
+        <span id="added_cost"></span>
+        <h2 id="final_price">0.00 lei</h1>
+          <div class="qty">
+            <form>
+              <div class="quantity-input">
+                <div class="quantity-input-minus">-</div>
+                <input type="number" id="quantity" class="input-text" step="1" min="1" max="" name="quantity" value="1"
+                  title="Qty" size="4" placeholder="" inputmode="">
+                <div class="quantity-input-plus">+</div>
+              </div>
+            </form>
+            <button type="button" class="add_to_cart"><i id="cart_icon" class='fa fa-shopping-cart'
+                style='color: #f9931d; display : none'></i>
+              Adaugă în coș
+            </button>
+          </div>
+          <div>
+      </footer>
+      <footer align="left" class="favorite_container">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+            <path
+              d="M24 42.7l-2.9-2.63C10.8 30.72 4 24.55 4 17 4 10.83 8.83 6 15 6c3.48 0 6.82 1.62 9 4.17C26.18 7.62 29.52 6 33 6c6.17 0 11 4.83 11 11 0 7.55-6.8 13.72-17.1 23.07L24 42.7z">
+            </path>
+          </svg><span id="favorite__label" style="
+        width: 100%;
+    ">Configuratiile mele</span></a>
+      </footer>
     </div>
-
-    <div class="final_price">
-      <label id="price_label"></label>
-      <span id="price"></span>
-      <h2 id="final_price">0.00 lei</h1>
-        <div class="qty">
-          <form>
-            <div class="woopq-quantity-input">
-              <div class="woopq-quantity-input-minus">-</div>
-              <input type="number" id="quantity_6322c048d0003" class="input-text qty text" step="1" min="1" max=""
-                name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="">
-              <div class="woopq-quantity-input-plus">+</div>
-            </div>
-          </form>
-          <button type="button" class="primary button btn btn-primary configurator-add-to-cart">
-            Adaugă în coș
-          </button>
-        </div>
-    </div>
-  
-    <script src="./configurator.js"></script>
-</body>
-
-</html>
+  </div>

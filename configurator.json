@@ -16,7 +16,8 @@
           "icon": "icon_snow.png",
           "stock": "232",
           "price": 0,
-          "picture": "snow_picture.png"
+          "picture": "snow_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "1",
@@ -25,7 +26,8 @@
           "icon": "icon_sky.png",
           "stock": "3232",
           "price": 0,
-          "picture": "sky_picture.png"
+          "picture": "sky_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "1",
@@ -34,7 +36,8 @@
           "icon": "icon_ruby.png",
           "stock": "0",
           "price": 0,
-          "picture": "ruby_picture.png"
+          "picture": "ruby_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "1",
@@ -43,25 +46,28 @@
           "icon": "icon_ink.png",
           "stock": "4232",
           "price": 0,
-          "picture": "ink_picture.png"
+          "picture": "ink_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "1",
           "id": "5",
           "name": "OBSIDIAN",
-          "icon":"icon_obsidian.png",
+          "icon": "icon_obsidian.png",
           "stock": "23232",
           "price": 0,
-          "picture": "obsidian_picture.png"
+          "picture": "obsidian_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "1",
           "id": "6",
           "name": "BLOSSOM",
-          "icon":"icon_blossom.png",
+          "icon": "icon_blossom.png",
           "stock": "300",
           "price": 0,
-          "picture": "blossom_picture.png"
+          "picture": "blossom_picture.png",
+          "gift":false
         }
       ]
     },
@@ -78,7 +84,8 @@
           "icon": "diamond.png",
           "stock": "4343",
           "price": 270,
-          "picture": "diamond_picture.png"
+          "picture": "diamond_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -87,7 +94,8 @@
           "icon": "ice.png",
           "stock": "434",
           "price": 270,
-          "picture": "ice_picture.png"
+          "picture": "ice_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -96,7 +104,8 @@
           "icon": "oreo.png",
           "stock": "3434",
           "price": 270,
-          "picture": "oreo_picture.png"
+          "picture": "oreo_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -105,7 +114,8 @@
           "icon": "cj.png",
           "stock": "232",
           "price": 340,
-          "picture": "cj_picture.png"
+          "picture": "cj_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -114,7 +124,8 @@
           "icon": "shrimp.png",
           "stock": "323",
           "price": 390,
-          "picture": "shrimp_picture.png"
+          "picture": "shrimp_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -123,7 +134,8 @@
           "icon": "dolphin.png",
           "stock": "323",
           "price": 390,
-          "picture": "dolphin_picture.png"
+          "picture": "dolphin_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -132,7 +144,8 @@
           "icon": "icon_L3.png",
           "stock": "323",
           "price": 380,
-          "picture": "L3.png"
+          "picture": "L3.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -141,16 +154,18 @@
           "icon": "icon_t1.png",
           "stock": "323",
           "price": 380,
-          "picture": "t1.png"
+          "picture": "t1.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "9",
-          "name": "CAP Yellow V2 ",
+          "name": "CAP Yellow V2",
           "icon": "icon_cap_yellow.png",
           "stock": "323",
           "price": 380,
-          "picture": "cap_yellow.png"
+          "picture": "cap_yellow.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -159,7 +174,8 @@
           "icon": "icon_alpaca.png",
           "stock": "0",
           "price": 320,
-          "picture": "alpaca.png"
+          "picture": "alpaca.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -168,16 +184,18 @@
           "icon": "icon_cream.png",
           "stock": "323",
           "price": 340,
-          "picture": "cream.png"
+          "picture": "cream.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "12",
-          "name": "Ink Black V2 ",
+          "name": "Ink Black V2",
           "icon": "icon_ink_black.png",
           "stock": "323",
           "price": 390,
-          "picture": "ink_black.png"
+          "picture": "ink_black.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -186,7 +204,8 @@
           "icon": "icon_ink_pink.png",
           "stock": "323",
           "price": 440,
-          "picture": "ink_pink.png"
+          "picture": "ink_pink.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -195,7 +214,8 @@
           "icon": "icon_glazed_green.png",
           "stock": "323",
           "price": 240,
-          "picture": "glazed_green.png"
+          "picture": "glazed_green.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -204,7 +224,8 @@
           "icon": "icon_noble_yellow.png",
           "stock": "323",
           "price": 240,
-          "picture": "noble_yellow.png"
+          "picture": "noble_yellow.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -213,16 +234,18 @@
           "icon": "icon_box_white.png",
           "stock": "323",
           "price": 240,
-          "picture": "box_white.png"
+          "picture": "box_white.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "17",
           "name": "RUBY",
-          "icon": "icon_ruby_cap.png",
+          "icon": "icon_ruby_switch.png",
           "stock": "323",
           "price": 290,
-          "picture": "icon_ruby_cap.png"
+          "picture": "icon_ruby_cap.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -231,34 +254,38 @@
           "icon": "icon_sapphire.png",
           "stock": "323",
           "price": 290,
-          "picture": "sapphire.png"
+          "picture": "sapphire.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "19",
-          "name": "CARROT ",
+          "name": "CARROT",
           "icon": "icon_carrot.png",
           "stock": "323",
           "price": 280,
-          "picture": "carrot.png"
+          "picture": "carrot.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "20",
-          "name": "Purple Pandas  ",
+          "name": "Purple Pandas",
           "icon": "icon_purple_pandas.png",
           "stock": "0",
           "price": 280,
-          "picture": "purple_pandas.png"
+          "picture": "purple_pandas.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "21",
-          "name": "Milky Clear ",
+          "name": "Milky Clear",
           "icon": "icon_milky.png",
           "stock": "323",
           "price": 140,
-          "picture": "milky.png"
+          "picture": "milky.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
@@ -267,43 +294,48 @@
           "icon": "icon_milky_yellow.png",
           "stock": "0",
           "price": 140,
-          "picture": "milky_yellow.png"
+          "picture": "milky_yellow.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "23",
-          "name": "Outemu Brown ",
+          "name": "Outemu Brown",
           "icon": "icon_outemu_brown.png",
           "stock": "323",
           "price": 90,
-          "picture": "outemu_brown.png"
+          "picture": "outemu_brown.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "24",
-          "name": "Outemu Black ",
+          "name": "Outemu Black",
           "icon": "icon_outemu_black.png",
           "stock": "323",
           "price": 90,
-          "picture": "outemu_black.png"
+          "picture": "outemu_black.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "25",
-          "name": "Outemu Blue ",
+          "name": "Outemu Blue",
           "icon": "icon_outemu_blue.png",
           "stock": "323",
           "price": 90,
-          "picture": "outemu_blue.png"
+          "picture": "outemu_blue.png",
+          "gift":false
         },
         {
           "id_attribute": "2",
           "id": "26",
-          "name": "Outemu Red ",
+          "name": "Outemu Red",
           "icon": "icon_outemu_red.png",
           "stock": "323",
           "price": 90,
-          "picture": "outemu_red.png"
+          "picture": "outemu_red.png",
+          "gift":false
         }
       ]
     },
@@ -320,7 +352,8 @@
           "icon": "liftoff.png",
           "stock": "2323",
           "price": 199,
-          "picture": "liftoff_picture.png"
+          "picture": "liftoff_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -329,7 +362,8 @@
           "icon": "kyoto.png",
           "stock": "232",
           "price": 189,
-          "picture": "kyoto_picture.png"
+          "picture": "kyoto_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -338,7 +372,8 @@
           "icon": "oct_yellow.png",
           "stock": "323",
           "price": 199,
-          "picture": "oct_yellow_picture.png"
+          "picture": "oct_yellow_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -347,7 +382,8 @@
           "icon": "oct_white.png",
           "stock": "232",
           "price": 199,
-          "picture": "oct_white_picture.png"
+          "picture": "oct_white_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -356,7 +392,8 @@
           "icon": "ggambu.png",
           "stock": "233",
           "price": 199,
-          "picture": "ggambu_picture.png"
+          "picture": "ggambu_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -365,7 +402,8 @@
           "icon": "submarine.png",
           "stock": "0",
           "price": 199,
-          "picture": "submarine_picture.png"
+          "picture": "submarine_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -374,7 +412,8 @@
           "icon": "olive.png",
           "stock": "100",
           "price": 199,
-          "picture": "olive_picture.png"
+          "picture": "olive_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -383,7 +422,8 @@
           "icon": "kobe.png",
           "stock": "100",
           "price": 129,
-          "picture": "kobe_picture.png"
+          "picture": "kobe_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -392,7 +432,8 @@
           "icon": "joker.png",
           "stock": "100",
           "price": 99,
-          "picture": "joker_picture.png"
+          "picture": "joker_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -401,7 +442,8 @@
           "icon": "liliac_ocean.png",
           "stock": "100",
           "price": 99,
-          "picture": "liliac_ocean_picture.png"
+          "picture": "liliac_ocean_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -410,7 +452,8 @@
           "icon": "crimson.png",
           "stock": "100",
           "price": 99,
-          "picture": "crimson_picture.png"
+          "picture": "crimson_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -419,7 +462,8 @@
           "icon": "black_red_devil.png",
           "stock": "100",
           "price": 99,
-          "picture": "black_red_devil_picture.png"
+          "picture": "black_red_devil_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -428,7 +472,8 @@
           "icon": "black_sea.png",
           "stock": "100",
           "price": 99,
-          "picture": "black_sea_picture.png"
+          "picture": "black_sea_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -437,7 +482,8 @@
           "icon": "liliac.png",
           "stock": "100",
           "price": 99,
-          "picture": "liliac_picture.png"
+          "picture": "liliac_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -446,7 +492,8 @@
           "icon": "lemonade.png",
           "stock": "100",
           "price": 99,
-          "picture": "lemonade.png"
+          "picture": "lemonade.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -455,7 +502,8 @@
           "icon": "orange.png",
           "stock": "100",
           "price": 99,
-          "picture": "orange.png"
+          "picture": "orange.png",
+          "gift":false
         },
         {
           "id_attribute": "3",
@@ -464,7 +512,8 @@
           "icon": "red_devil.png",
           "stock": "0",
           "price": 99,
-          "picture": "red_devil_picture.png"
+          "picture": "red_devil_picture.png",
+          "gift":false
         }
       ]
     },
@@ -475,60 +524,74 @@
       "icon": "null",
       "variants": [
         {
+          "id_attribute": "4",
           "id": "1",
           "name": "Durock Plate Mount Negre",
           "icon": "mount_negre.png",
           "stock": "0",
           "price": 49,
-          "picture": "mount_negre_picture.png"
+          "picture": "null",
+          "gift":false
         },
         {
+          "id_attribute": "4",
           "id": "2",
           "name": "Durock Plate Mount Albe",
           "icon": "mount_albe.png",
           "stock": "233",
           "price": 49,
-          "picture": "mount_albe_picture.png"
+          "picture": "null",
+          "gift":false
         },
         {
+          "id_attribute": "4",
           "id": "3",
           "name": "KRYTOX 205",
           "icon": "kry_205.png",
           "stock": "3232",
           "price": 79,
-          "picture": "kry_205_picture.png"
+          "picture": "kry_205_picture.png",
+          "gift":false
         },
         {
+          "id_attribute": "4",
           "id": "4",
           "name": "KRYTOX 105",
           "icon": "kry_105.png",
           "stock": "434",
           "price": 79,
-          "picture": "kry_105_picture.png"
+          "picture": "kry_105_picture.png",
+          "gift":false
         },
         {
+          "id_attribute": "4",
           "id": "5",
           "name": "FILME",
           "icon": "filme.png",
           "stock": "1223",
           "price": 39,
-          "picture": "filme_picture.png"
+          "picture": "null",
+          "gift":false
         },
         {
+          "id_attribute": "4",
           "id": "6",
           "name": "Pensula QwertyKey",
           "icon": "pensula.png",
           "stock": "232",
           "price": 19,
-          "picture": "pensula_picture.png"
+          "picture": "pensula_picture.png",
+          "gift":false
         },
         {
+          "id_attribute": "4",
           "id": "7",
           "name": "Switch Opener",
           "icon": "opener.png",
           "stock": "54",
           "price": 19,
-          "picture": "opener_picture.png"
+          "picture": "opener_picture.png",
+          "gift":false
         }
       ]
     },
@@ -539,36 +602,44 @@
       "icon": "null",
       "variants": [
         {
+          "id_attribute": "5",
           "id": "1",
           "name": "Lubrifiere Switchuri",
           "icon": "lub_switch.png",
           "stock": "434",
           "price": 269,
-          "picture": "lub_switch_picture.png"
+          "picture": "null",
+          "gift":false
         },
         {
+          "id_attribute": "5",
           "id": "2",
           "name": "Lubrifiere Stabilizatoare",
           "icon": "lub_stabil.png",
           "stock": "543",
           "price": 71,
-          "picture": "lub_stabil_picture.png"
+          "picture": "null",
+          "gift":false
         },
         {
+          "id_attribute": "5",
           "id": "3",
           "name": "Adaugare filme",
           "icon": "film.png",
           "stock": "323",
           "price": 71,
-          "picture": "film_picture.png"
+          "picture": "null",
+          "gift":false
         },
         {
+          "id_attribute": "5",
           "id": "4",
           "name": "Asamblare Componente",
           "icon": "asam_componente.png",
           "stock": "54",
           "price": 89,
-          "picture": "asam_componente_picture.png"
+          "picture": "null",
+          "gift":false
         }
       ]
     },
@@ -579,36 +650,44 @@
       "icon": "null",
       "variants": [
         {
+          "id_attribute": "6",
           "id": "1",
           "name": "Cablu USB",
           "icon": "usb.png",
           "stock": "566",
           "price": 0,
-          "picture": "usb_picture.png"
+          "picture": "usb_picture.png",
+          "gift":true
         },
         {
+          "id_attribute": "6",
           "id": "2",
           "name": "Keycap Puller",
           "icon": "keycap.png",
           "stock": "2323",
           "price": 0,
-          "picture": "keycap_picture.png"
+          "picture": "null",
+          "gift":true
         },
         {
+          "id_attribute": "6",
           "id": "3",
           "name": "Switch Puller",
           "icon": "switch.png",
           "stock": "323",
           "price": 0,
-          "picture": "switch_picture.png"
+          "picture": "null",
+          "gift":true
         },
         {
+          "id_attribute": "6",
           "id": "4",
           "name": "Set Stabilizatoare",
           "icon": "set_stabil.png",
           "stock": "34",
           "price": 0,
-          "picture": "set_stabil_picture.png"
+          "picture": "null",
+          "gift":true
         }
       ]
     },
@@ -625,7 +704,8 @@
           "icon": "negru.png",
           "stock": "0",
           "price": 149,
-          "picture": "negru_picture.png"
+          "picture": "negru_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "7",
@@ -634,7 +714,8 @@
           "icon": "alb.png",
           "stock": "97",
           "price": 149,
-          "picture": "alb_picture.png"
+          "picture": "alb_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "7",
@@ -643,7 +724,8 @@
           "icon": "rosu.png",
           "stock": "534",
           "price": 149,
-          "picture": "rosu_picture.png"
+          "picture": "rosu_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "7",
@@ -652,7 +734,8 @@
           "icon": "violet.png",
           "stock": "234",
           "price": 149,
-          "picture": "violet_picture.png"
+          "picture": "violet_picture.png",
+          "gift":false
         },
         {
           "id_attribute": "7",
@@ -661,7 +744,8 @@
           "icon": "albastru.png",
           "stock": "230",
           "price": 149,
-          "picture": "albastru_picture.png"
+          "picture": "albastru_picture.png",
+          "gift":false
         }
       ]
     }
