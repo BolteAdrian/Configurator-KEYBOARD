@@ -54,7 +54,7 @@ function init() {
       // if the attribute has an icon we use it, if not then we let some space for design
       if (data.attributes[i].icon != "null") {
         var itemIcon = document.createElement("img");
-        itemIcon.setAttribute("src", "./../images/" + data.attributes[i].icon);
+        itemIcon.setAttribute("src", "./../images/" + data.attributes[i].icon );
         itemIcon.setAttribute("alt", "picture");
         itemIcon.setAttribute("width", "40");
         itemIcon.setAttribute("height", "40");
@@ -62,7 +62,7 @@ function init() {
         header.prepend(itemIcon);
       } else {
         var space = document.createElement("span");
-        space.style.paddingRight = "3rem";
+        space.style.paddingRight = "4.5rem";
         header.prepend(space);
       }
 
@@ -80,7 +80,7 @@ function init() {
 
         if (element.picture != "null") {
           const img = document.createElement("img");
-          img.setAttribute("src", "./../images/" + element.picture);
+          img.setAttribute("src", "./../images/" + element.picture );
           img.setAttribute("alt", "picture");
           img.setAttribute("width", "528");
           img.setAttribute("height", "528");
@@ -108,7 +108,8 @@ function init() {
           input.setAttribute("input_name", element.name);
           input.setAttribute("name", element.id_attribute);
           input.setAttribute("value", element.price);
-          input.style.backgroundImage = `url(${"./../images/" + element.icon})`;
+          input.setAttribute("picture", element.picture);
+          input.setAttribute("id_input", element.id);
 
           if (element.icon != "null") {
             input.style.backgroundImage = `url(${"./../images/" + element.icon
@@ -126,7 +127,6 @@ function init() {
           input.setAttribute("picture", element.picture);
           input.setAttribute("input_name", element.name);
           input.setAttribute("id_input", element.id);
-          
           labelName.setAttribute("for", id_label);
           labelName.setAttribute("class", "button_label");
         }
@@ -221,8 +221,8 @@ function init() {
         const priceLabel = document.getElementById("price_label");
         const added_cost = document.getElementById("added_cost");
         added_cost.style.fontSize = "16px";
-        //if the variant is an radio button
 
+        //if the variant is an radio button
         if (e.target.matches("input")) {
           if (e.target.type == "radio") {
             var sectionsA = document.querySelectorAll("a");
@@ -263,7 +263,7 @@ function init() {
                 .querySelectorAll("img");
 
             //select the picture of the current variant
-            var selected_img = "./../images/" + pic;
+            var selected_img = "/images/" + pic ;
 
             //if we want to delete an variant that we selected alone
             if (
@@ -383,7 +383,7 @@ function init() {
                   .querySelector(".product_container__image")
                   .querySelectorAll("img");
               //select the picture of the current variant
-              var selected_img = "/images/" + pic;
+              var selected_img = "/images/" + pic ;
 
               //the picture for the deselected element will be removed
               images.forEach((element) => {
@@ -518,10 +518,6 @@ function init() {
           console.log("ERROR: The product is not valid !");
         }
       });
-
-
-  }
-  );
+ } );
 }
-
-init();
+  init();
