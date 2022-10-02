@@ -14,10 +14,8 @@
 }
 
 .header_container h2{
-  font-size : 2.1rem !important;
   font-family: "Montserrat", Sans-serif !important;
   margin: 0;
-  margin-top: 1rem;
 }
 
 
@@ -98,7 +96,6 @@
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   width: 20rem;
-  margin-top: 1rem;
 }
 
 .open .item_heading:after {
@@ -194,11 +191,16 @@
   display: block;
   position: absolute;
   padding: 1em;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,.85);
   color: #fff;
-  font-size: 0.8em;
+  font-size: .8em;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 2;
+  width: 17%;
+  margin: 0!important;
+  text-align: center;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .selected_item {
@@ -244,8 +246,8 @@
 }
 
 .qty .input-text {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.65rem;
+  height: 2.65rem;
   line-height: 38px;
   padding: 0 10px;
   margin: 0;
@@ -415,7 +417,9 @@ input::-webkit-inner-spin-button {
     width: 100%;
     text-align: center;
   }
-
+  .item {
+    width: 20rem;
+  }
   .product_container {
     display: grid;
     grid-template-columns: 1fr;

@@ -126,6 +126,8 @@ function init() {
           input.setAttribute("picture", element.picture);
           input.setAttribute("input_name", element.name);
           input.setAttribute("id_input", element.id);
+          
+          labelName.setAttribute("for", id_label);
           labelName.setAttribute("class", "button_label");
         }
 
