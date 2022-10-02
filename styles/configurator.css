@@ -184,6 +184,7 @@
   margin: 0%;
   padding: 0%;
   text-align: center;
+  cursor: pointer;
 }
 
 .input_content .out_of_stock {
